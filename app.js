@@ -4,7 +4,6 @@ import cors from 'cors';
 import path from 'path';
 import history from 'connect-history-api-fallback';
 import mongoose from 'mongoose';
-// user_app_tutorial_node   ChVH5oqbRHkTzFIM
 const uri = 'mongodb+srv://user_app_tutorial_node:ChVH5oqbRHkTzFIM@nodecluster-jwqdf.mongodb.net/test?retryWrites=true&w=majority';
 const options = {
     useNewUrlParser: true,
@@ -28,7 +27,7 @@ app.use(express.urlencoded({extended: true}));
 
 app.use('/api', require('./routes/nota'));
 
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('puerto', process.env.PORT || 3000);
 
