@@ -20,7 +20,7 @@ router.post('/notas', async (req, res) => {
         const notasDB = await Nota.find();
         res.status(200).json(notasDB);
     } catch (e) {
-
+        console.log(e);
     }
 });
 

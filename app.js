@@ -1,10 +1,11 @@
 import express from 'express';
 import morgan from 'morgan';
+import cors from 'cors';
 import path from 'path';
 import history from 'connect-history-api-fallback';
 import mongoose from 'mongoose';
-
-const uri = 'mongodb://localhost:27017/computo';
+// user_app_tutorial_node   ChVH5oqbRHkTzFIM
+const uri = 'mongodb+srv://user_app_tutorial_node:ChVH5oqbRHkTzFIM@nodecluster-jwqdf.mongodb.net/test?retryWrites=true&w=majority';
 const options = {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -18,6 +19,7 @@ mongoose.connect(uri, options).then(() => {
 });
 const app = express();
 
+app.use(cors());
 app.use(history());
 app.use(morgan('dev'));
 // app.use(cors());
